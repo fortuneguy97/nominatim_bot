@@ -1,0 +1,19 @@
+{
+  "name": "nominatim-extension-backend",
+  "version": "1.0.0",
+  "description": "Backend API for Nominatim extension MongoDB operations",
+  "main": "api.js",
+  "scripts": {
+    "start": "node api.js",
+    "dev": "nodemon api.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mongodb": "^6.3.0",
+    "node-fetch": "^2.7.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}

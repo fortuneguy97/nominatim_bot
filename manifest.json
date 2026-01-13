@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Nominatim Last Click Display",
+  "version": "1.0",
+  "description": "Display last click coordinates from Nominatim OpenStreetMap interface",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "*://nominatim.openstreetmap.org/*",
+    "http://localhost:3000/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://nominatim.openstreetmap.org/*"],
+      "js": ["check/address_check_browser.js", "content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["check/geonames_cities.json", "check/geonames_countries.json"],
+      "matches": ["*://nominatim.openstreetmap.org/*"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Last Click Coordinates"
+  }
+}
